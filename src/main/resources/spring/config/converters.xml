@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * converters.xml
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd		
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd		
+	">
+
+	<util:list id="converters">
+	
+		<bean class="converters.ActorToStringConverter" /> 
+		<bean class="converters.StringToActorConverter" />
+		
+		<bean class="converters.BannedToStringConverter" /> 
+		<bean class="converters.StringToBannedConverter" />
+		
+		<bean class="converters.BattleToStringConverter" /> 
+		<bean class="converters.StringToBattleConverter" />
+		
+		<bean class="converters.BuiltToStringConverter" /> 
+		<bean class="converters.StringToBuiltConverter" />
+		
+		<bean class="converters.ConfigurationToStringConverter" /> 
+		<bean class="converters.StringToConfigurationConverter" />
+		
+		<bean class="converters.ContentManagerToStringConverter" /> 
+		<bean class="converters.StringToContentManagerConverter" />
+		
+		<bean class="converters.CoordinatesToStringConverter" /> 
+		<bean class="converters.StringToCoordinatesConverter" />
+		
+		<bean class="converters.DefenseToStringConverter" /> 
+		<bean class="converters.StringToDefenseConverter" />
+		
+		<bean class="converters.FactionToStringConverter" /> 
+		<bean class="converters.StringToFactionConverter" />
+		
+		<bean class="converters.ItemToStringConverter" /> 
+		<bean class="converters.StringToItemConverter" />
+		
+		<bean class="converters.LegalTextToStringConverter" /> 
+		<bean class="converters.StringToLegalTextConverter" />
+		
+		<bean class="converters.LivelihoodToStringConverter" /> 
+		<bean class="converters.StringToLivelihoodConverter" />
+		
+		<bean class="converters.MaterialsToStringConverter" /> 
+		<bean class="converters.StringToMaterialsConverter" />
+		
+		<bean class="converters.PrizeToStringConverter" /> 
+		<bean class="converters.StringToPrizeConverter" />
+		
+		<bean class="converters.PurchaseToStringConverter" /> 
+		<bean class="converters.StringToPurchaseConverter" />
+		
+		<bean class="converters.RecruiterToStringConverter" /> 
+		<bean class="converters.StringToRecruiterConverter" />
+		
+		<bean class="converters.RequirementToStringConverter" /> 
+		<bean class="converters.StringToRequirementConverter" />
+		
+		<bean class="converters.ShieldToStringConverter" /> 
+		<bean class="converters.StringToShieldConverter" />
+		
+		<bean class="converters.WarehouseToStringConverter" /> 
+		<bean class="converters.StringToWarehouseConverter" />
+		
+		
+		
+		
+		
+		
+	<!-- CARLOS -->
+		<bean class="converters.GummiShipToStringConverter" /> 
+		<bean class="converters.StringToGummiShipConverter" /> 
+		
+		<bean class="converters.TroopToStringConverter" /> 
+		<bean class="converters.StringToTroopConverter" /> 
+		
+		<bean class="converters.RecruitedToStringConverter" /> 
+		<bean class="converters.StringToRecruitedConverter" /> 
+		
+		<bean class="converters.InvitationToStringConverter" /> 
+		<bean class="converters.StringToInvitationConverter" /> 
+		
+		<bean class="converters.OrganizationToStringConverter" /> 
+		<bean class="converters.StringToOrganizationConverter" /> 
+		
+		<bean class="converters.ChattyToStringConverter" /> 
+		<bean class="converters.StringToChattyConverter" /> 
+		
+	<!-- ÁNGEL PÉREZ -->
+	
+		<bean class="converters.BuildingToStringConverter" /> 
+		<bean class="converters.StringToBuildingConverter" /> 
+	
+	<!-- ÁNGEL LOZANO -->
+	
+	<!-- SERGIO -->
+		<bean class="converters.AuthorityToStringConverter" /> 
+		<bean class="converters.StringToAuthorityConverter" /> 
+	
+	<!-- CAMILA -->
+		<bean class="converters.KeybladeWielderToStringConverter" /> 
+		<bean class="converters.StringToKeybladeWielderConverter" /> 
+		
+		<bean class="converters.ReportToStringConverter" /> 
+		<bean class="converters.StringToReportConverter" /> 
+		
+		<bean class="converters.ReportUpdateToStringConverter" /> 
+		<bean class="converters.StringToReportUpdateConverter" /> 
+		
+		<bean class="converters.AdministratorToStringConverter" /> 
+		<bean class="converters.StringToAdministratorConverter" /> 
+		
+		<bean class="converters.GameMasterToStringConverter" /> 
+		<bean class="converters.StringToGameMasterConverter" /> 
+		
+	<!-- ISMAEL -->
+
+
+	</util:list>
+	
+</beans>

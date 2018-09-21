@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles_es.xml
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="reportUpdate/list" extends="master.page">	
+		<put-attribute name="title" value="Lista de actualizaciones" />
+		<put-attribute name="body" value="/views/reportUpdate/list.jsp" />
+	</definition>
+	
+	<definition name="reportUpdate/edit" extends="master.page">	
+		<put-attribute name="title" value="Actualizar reporte" />
+		<put-attribute name="body" value="/views/reportUpdate/edit.jsp" />
+	</definition>
+	
+	<definition name="reportUpdate/display" extends="master.page">	
+		<put-attribute name="title" value="Mostrar actualización" />
+		<put-attribute name="body" value="/views/reportUpdate/display.jsp" />
+	</definition>
+	
+	<definition name="reportUpdate/table" template="/views/reportUpdate/reportUpdatesTable.jsp" /> 
+	
+</tiles-definitions>

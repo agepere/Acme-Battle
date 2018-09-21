@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="item/player/shopItemsList" extends="master.page">	
+		<put-attribute name="title" value="Shop" />
+		<put-attribute name="body" value="/views/item/shopItemsList.jsp" />
+	</definition>
+	
+	<definition name="item/player/ownedItemsList" extends="master.page">	
+		<put-attribute name="title" value="My items" />
+		<put-attribute name="body" value="/views/item/ownedItemsList.jsp" />
+	</definition>
+	
+	<definition name="item/player/activeItemsList" extends="master.page">	
+		<put-attribute name="title" value="My active items" />
+		<put-attribute name="body" value="/views/item/activeItemsList.jsp" />
+	</definition>
+	
+	<definition name="item/manager/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit item" />
+		<put-attribute name="body" value="/views/item/edit.jsp" />
+	</definition>
+	
+	<definition name="item/manager/createdItems" extends="master.page">	
+		<put-attribute name="title" value="Created items" />
+		<put-attribute name="body" value="/views/item/createdItems.jsp" />
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * i18n-l10n.xml
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd 
+	">
+
+	<util:list id="messages">
+		<value>/views/master-page/messages</value>
+		<value>/views/misc/messages</value>
+		<value>/views/security/messages</value>		
+		<value>/views/welcome/messages</value>
+		
+		<value>/views/administrator/messages</value>
+		<value>/views/customer/messages</value>
+		<value>/views/profile/messages</value>
+		<value>/views/legaltext/messages</value>
+		
+		<!-- CARLOS -->
+		<value>/views/chatty/messages</value>
+		<value>/views/invitation/messages</value>
+		<value>/views/organization/messages</value>
+		<value>/views/troop/messages</value>
+		<value>/views/gummiShip/messages</value>
+		<value>/views/recruited/messages</value>
+		<!-- ÁNGEL PÉREZ -->
+		<value>/views/building/messages</value>
+		<value>/views/built/messages</value>
+		<value>/views/requirement/messages</value>
+		<value>/views/prize/messages</value>
+		
+		
+		
+		<!-- ÁNGEL LOZANO -->
+		<value>/views/faction/messages</value>
+		<value>/views/battle/messages</value>
+		
+		
+		<!-- SERGIO -->
+		<value>/views/keybladewielder/messages</value>
+		<value>/views/faction/messages</value>
+		
+		<!-- CAMILA -->
+		
+		<value>/views/report/messages</value>
+		<value>/views/reportUpdate/messages</value>
+		<value>/views/prompt/messages</value>
+		
+		<!-- ISMAEL -->
+		<value>/views/item/messages</value>
+		<value>/views/administrator/messages</value>
+		<value>/views/configuration/messages</value>
+		
+	</util:list>
+
+</beans>

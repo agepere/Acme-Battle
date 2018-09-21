@@ -1,0 +1,209 @@
+/* displaytag.css
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ * 
+ */
+ 
+table {
+	border: 1px solid #4195fc!important;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+   overflow: hidden;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+       -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	width: 100%;
+	margin: 20px 0 20px 0 !important;
+	color:black;
+	border: 2px solid #fff;
+    font-size: 1em;
+
+}
+
+th,td {
+	padding: 10px 30px 10px 30px !important;
+	vertical-align: top;
+}
+
+tr th td{
+	padding:10px;
+}
+
+thead tr {
+	background-color: #1a1e3d;
+	color: rgba(255,255,255,.9);
+}
+
+th.sorted {
+	background-color: #FFAF55;
+}
+
+th a,th a:visited {
+	color: black;
+}
+
+th a:hover {
+	color: black;
+}
+
+th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+th.sortable a {
+	background-image: url(../images/arrow_off.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-position: right;	
+}
+
+th.order1 a {
+	background-image: url(../images/arrow_down.png);
+	background-repeat: no-repeat;
+	background-position: right;		
+}
+
+th.order2 a {
+	background-image: url(../images/arrow_up.png);
+	background-repeat: no-repeat;
+	background-position: right;	
+}
+
+tr.odd {
+	background-color: white;
+}
+
+tr.odd:hover {
+	background-color: #CCDFF5;
+	    -webkit-transition: all 330ms ease-in-out;
+    -moz-transition: all 165ms ease-in-out;
+    -ms-transition: all 165ms ease-in-out;
+    -o-transition: all 165ms ease-in-out;
+    transition: all 165ms ease-in-out;
+}
+
+tr.tableRowEven,tr.even {
+	background-color: #f6f6f6;
+}
+
+tr.tableRowEven,tr.even:hover {
+	background-color: #CCDFF5;
+	    -webkit-transition: all 330ms ease-in-out;
+    -moz-transition: all 165ms ease-in-out;
+    -ms-transition: all 165ms ease-in-out;
+    -o-transition: all 165ms ease-in-out;
+    transition: all 165ms ease-in-out;
+}
+
+div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 79%;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png);
+}
+
+span.xml {
+	background-image: url(../images/ico_file_xml.png);
+}
+
+span.pdf {
+	background-image: url(../images/ico_file_pdf.png);
+}
+
+span.rtf {
+	background-image: url(../images/ico_file_rtf.png);
+}
+
+span.pagebanner {
+	-webkit-border-top-left-radius: 5px;
+       -moz-border-top-left-radius: 5px;
+            border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+       -moz-border-top-right-radius: 5px;
+            border-top-right-radius: 5px;
+	background-color: #eee;
+	padding: 4px 4px 0px 4px;
+	text-align: center;
+	width: 100%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+	color:black;
+}
+
+span.pagelinks {
+	-webkit-border-bottom-left-radius: 5px;
+       -moz-border-bottom-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+       -moz-border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+	background-color: #eee;
+	
+	padding: 0px 4px 4px 4px;
+	text-align: center;
+	width: 100%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+	color:black;
+}
+
+.group-1 {
+	padding-bottom: 10px;
+	border-top: 1px solid black;
+}
+
+.group-2 {
+	font-style: italic;
+	border-top: 1px solid black;
+}
+
+.subtotal-sum,.grandtotal-sum {
+	text-align: right;
+}
+
+.subtotal-header {
+	padding-bottom: 0px;
+	border-top: 1px solid white;
+}
+
+.subtotal-label,.grandtotal-label {
+	border-top: 1px solid white;
+	font-weight: bold;
+}
+
+.grouped-table tr.even {
+	background-color: #fff;
+}
+
+.grouped-table tr.odd {
+	background-color: #fff;
+}
+
+.grandtotal-row {
+	border-top: 2px solid black;
+}

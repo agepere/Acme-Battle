@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+  * tiles.xml 
+  * 
+  * Copyright (C) 2017 Universidad de Sevilla 
+  * 
+  * The use of this project is hereby constrained to the conditions of the 
+  * TDG Licence, a copy of which you may download from 
+  * http://www.tdg-seville.info/License.html 
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+	">
+
+	<util:list id="tiles">
+		<value>/views/master-page/tiles.xml</value>		
+		<value>/views/misc/tiles.xml</value>		
+		<value>/views/security/tiles.xml</value>
+		<value>/views/welcome/tiles.xml</value>
+		
+		<value>/views/administrator/tiles.xml</value>
+		<value>/views/customer/tiles.xml</value>
+		<value>/views/profile/tiles.xml</value>
+		
+		<value>/views/legaltext/tiles.xml</value>
+		
+		<!-- CARLOS --> 
+		<value>/views/chatty/tiles.xml</value>
+		<value>/views/invitation/tiles.xml</value>
+		<value>/views/organization/tiles.xml</value>
+		<value>/views/troop/tiles.xml</value>
+		<value>/views/gummiShip/tiles.xml</value>
+		
+		
+		<!-- ÁNGEL PÉREZ -->
+		<value>/views/building/tiles.xml</value>
+		<value>/views/built/tiles.xml</value>
+		<value>/views/requirement/tiles.xml</value>
+		<value>/views/prize/tiles.xml</value>
+		
+		<!-- ÁNGEL LOZANO -->
+		<value>/views/faction/tiles.xml</value>
+		<value>/views/battle/tiles.xml</value>
+		
+		<!-- SERGIO -->
+		<value>/views/keybladewielder/tiles.xml</value>
+		<value>/views/faction/tiles.xml</value>
+		
+		<!-- CAMILA -->
+		
+		<value>/views/report/tiles.xml</value>
+		<value>/views/reportUpdate/tiles.xml</value>
+		<value>/views/prompt/tiles.xml</value>
+		
+		<!-- ISMAEL -->
+		<value>/views/item/tiles.xml</value>
+		<value>/views/configuration/tiles.xml</value>
+		
+	</util:list>
+
+</beans>

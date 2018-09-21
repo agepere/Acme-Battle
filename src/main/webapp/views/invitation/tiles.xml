@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="organization/invitation/list" extends="master.page">	
+		<put-attribute name="title" value="Received invitations" />
+		<put-attribute name="body" value="/views/invitation/list.jsp" />
+	</definition>
+	
+	<definition name="organization/invitation/orgList" extends="master.page">	
+		<put-attribute name="title" value="Sent invitations" />
+		<put-attribute name="body" value="/views/invitation/organizationList.jsp" />
+	</definition>
+	
+	
+	<definition name="organization/invitation/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit invitation" />
+		<put-attribute name="body" value="/views/invitation/edit.jsp" />
+	</definition>
+	
+</tiles-definitions>

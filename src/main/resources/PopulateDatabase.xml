@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	<!-- User accounts -->
+
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="gamemaster1" />
+		<property name="password" value="b1551983481358e829a23be83e85ccdc" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="GM" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="manager1" />
+		<property name="password" value="c240642ddef994358c96da82c0361a58" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="player1" />
+		<property name="password" value="5d2bbc279b5ce75815849d5e3f0533ec" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="player2" />
+		<property name="password" value="88e77ff74930f37010370c296d14737b" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="player3" />
+		<property name="password" value="1aa3814dca32e4c0b79a2ca047ef1db0" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="player4" />
+		<property name="password" value="12efaba7fd50f5c66bd295683c0ce2a7" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount8" class="security.UserAccount">
+		<property name="username" value="player5" />
+		<property name="password" value="c5aec8b7110bb97bf59ab1a06805ebdd" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="false" />
+	</bean>
+	
+	<bean id="userAccount9" class="security.UserAccount">
+		<property name="username" value="manager2" />
+		<property name="password" value="8df5127cd164b5bc2d2b78410a7eea0c" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+	<bean id="userAccount10" class="security.UserAccount">
+		<property name="username" value="player6" />
+		<property name="password" value="9d470eed6fd655c08563e806848cdc6d" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+						<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+		<property name="enabled" value="true" />
+	</bean>
+	
+
+
+	
+	<!-- Other domain beans come here -->
+	
+	<!-- ADMIN -->
+	
+	<bean id="admin" class="domain.Administrator">
+		<property name="name" value="Administrador" />
+		<property name="surname" value="Sistema" />
+		<property name="nickname" value="admin" />
+		<property name="phone" value="549592823" />
+		<property name="email" value="admin@gmail.com" />
+		<property name="userAccount" ref="userAccount1" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+		<property name="avatar" value="https://i.pinimg.com/236x/e9/21/9f/e9219f8ef2a76ed643bc2ade7c64c929--dearly-beloved-tv-anime.jpg"/>
+	</bean>
+	
+	<!-- CONTENT MANAGER -->
+	
+	<bean id="manager1" class="domain.ContentManager">
+		<property name="name" value="Content" />
+		<property name="surname" value="Manager" />
+		<property name="nickname" value="manager" />
+		<property name="phone" value="549592823" />
+		<property name="email" value="manager1@gmail.com" />
+		<property name="userAccount" ref="userAccount3" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+	</bean>
+	
+	<bean id="manager2" class="domain.ContentManager">
+		<property name="name" value="Content" />
+		<property name="surname" value="Manager 2" />
+		<property name="nickname" value="manager2" />
+		<property name="phone" value="549592823" />
+		<property name="email" value="manager2@gmail.com" />
+		<property name="userAccount" ref="userAccount9" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+	</bean>
+	
+	<!-- GAME MASTER -->
+	
+	<bean id="gm1" class="domain.GameMaster">
+		<property name="name" value="Game" />
+		<property name="surname" value="Master" />
+		<property name="nickname" value="master" />
+		<property name="phone" value="549592823" />
+		<property name="email" value="gm1@gmail.com" />
+		<property name="userAccount" ref="userAccount2" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+	</bean>
+	
+	<!-- KEYBLADE WIELDER -->
+	
+	<bean id="player1" class="domain.KeybladeWielder">
+		<property name="name" value="Keyblade" />
+		<property name="surname" value="Wielder" />
+		<property name="nickname" value="Sora" />
+		<property name="phone" value="549592823" />
+		<property name="email" value="keybladewielder@gmail.com" />
+		<property name="userAccount" ref="userAccount4" />
+		<property name="lastConnection" value="02/07/2017 08:32" />
+		<property name="materials" ref="material1" />
+		<property name="wins" value="13" />
+		<property name="loses" value="7" />
+		<property name="worldCoordinates" ref="coordinates1" />
+		<property name="worldName" value="Mundo de Sora" />
+		<property name="faction" ref="faction1" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+		<!-- <property name="shield" ref="shield1" /> -->
+	</bean>
+	
+	<bean id="player2" class="domain.KeybladeWielder">
+		<property name="name" value="Star" />
+		<property name="surname" value="Fox" />
+		<property name="nickname" value="StarFox" />
+		<property name="phone" value="84959295233" />
+		<property name="email" value="starzorro@gmail.com" />
+		<property name="userAccount" ref="userAccount5" />
+		<property name="lastConnection" value="05/04/2017 11:05" />
+		<property name="materials" ref="material1" />
+		<property name="wins" value="79" />
+		<property name="loses" value="20" />
+		<property name="worldCoordinates" ref="coordinates2" />
+		<property name="worldName" value="Fox World" />
+		<property name="faction" ref="faction2" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+		<!-- <property name="shield" ref="shield2" /> -->
+	</bean>
+	
+	<bean id="player3" class="domain.KeybladeWielder">
+		<property name="name" value="Julio" />
+		<property name="surname" value="Mambo" />
+		<property name="nickname" value="Julito" />
+		<property name="phone" value="660450342" />
+		<property name="email" value="julitomambo@gmail.com" />
+		<property name="userAccount" ref="userAccount6" />
+		<property name="lastConnection" value="07/06/2017 11:05" />
+		<property name="materials" ref="material5" />
+		<property name="wins" value="10" />
+		<property name="loses" value="9" />
+		<property name="worldCoordinates" ref="coordinates3" />
+		<property name="worldName" value="Tron world" />
+		<property name="faction" ref="faction1" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+		<!-- <property name="shield" ref="shield2" /> -->
+	</bean>
+	
+	<bean id="player4" class="domain.KeybladeWielder">
+		<property name="name" value="Peter" />
+		<property name="surname" value="Garcia" />
+		<property name="nickname" value="Peter" />
+		<property name="phone" value="62458723" />
+		<property name="email" value="peter@hotmail.com" />
+		<property name="userAccount" ref="userAccount7" />
+		<property name="lastConnection" value="07/06/2017 11:05" />
+		<property name="materials" ref="material1" />
+		<property name="wins" value="30" />
+		<property name="loses" value="12" />
+		<property name="worldCoordinates" ref="coordinates4" />
+		<property name="worldName" value="Winnieh world" />
+		<property name="faction" ref="faction1" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+		<!-- <property name="shield" ref="shield2" /> -->
+	</bean>
+	
+	<bean id="player5" class="domain.KeybladeWielder">
+		<property name="name" value="Luke" />
+		<property name="surname" value="Smith" />
+		<property name="nickname" value="Luke" />
+		<property name="phone" value="694852941" />
+		<property name="email" value="luke@hotmail.com" />
+		<property name="userAccount" ref="userAccount8" />
+		<property name="lastConnection" value="07/06/2017 11:05" />
+		<property name="materials" ref="material1" />
+		<property name="wins" value="40" />
+		<property name="loses" value="26" />
+		<property name="worldCoordinates" ref="coordinates5" />
+		<property name="worldName" value="Riku world" />
+		<property name="faction" ref="faction2" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+		<!-- <property name="shield" ref="shield2" /> -->
+	</bean>
+	
+	<bean id="player6" class="domain.KeybladeWielder">
+		<property name="name" value="Jack" />
+		<property name="surname" value="Sparrow" />
+		<property name="nickname" value="Jack" />
+		<property name="phone" value="3259245623" />
+		<property name="email" value="jack@gmail.com" />
+		<property name="userAccount" ref="userAccount10" />
+		<property name="lastConnection" value="02/07/2017 08:32" />
+		<property name="materials" ref="material1" />
+		<property name="wins" value="10" />
+		<property name="loses" value="20" />
+		<property name="worldCoordinates" ref="coordinates1" />
+		<property name="worldName" value="Caribe" />
+		<property name="faction" ref="faction1" />
+		<property name="hasConfirmedTerms" value="true" />
+		<property name="confirmMoment" value="20/02/2016 00:00" />
+		<!-- <property name="shield" ref="shield1" /> -->
+	</bean>
+	
+	<!-- COORDINATES -->
+	<bean id="coordinates1" class="domain.Coordinates">
+		<property name="x" value="1" />
+		<property name="y" value="1" />
+		<property name="z" value="1" />
+	</bean>
+	
+	<bean id="coordinates2" class="domain.Coordinates">
+		<property name="x" value="2" />
+		<property name="y" value="2" />
+		<property name="z" value="2" />
+	</bean>
+	
+	<bean id="coordinates3" class="domain.Coordinates">
+		<property name="x" value="3" />
+		<property name="y" value="4" />
+		<property name="z" value="3" />
+	</bean>
+	
+	<bean id="coordinates4" class="domain.Coordinates">
+		<property name="x" value="4" />
+		<property name="y" value="5" />
+		<property name="z" value="3" />
+	</bean>
+	
+	<bean id="coordinates5" class="domain.Coordinates">
+		<property name="x" value="5" />
+		<property name="y" value="1" />
+		<property name="z" value="4" />
+	</bean>
+	
+	<bean id="coordinates6" class="domain.Coordinates">
+		<property name="x" value="7" />
+		<property name="y" value="2" />
+		<property name="z" value="5" />
+	</bean>
+	
+	<!-- MATERIALS -->
+	<bean id="material1" class="domain.Materials">
+		<property name="munny" value="300" />
+		<property name="mytrhil" value="300" />
+		<property name="gummiCoal" value="300" />
+	</bean>
+	
+	<bean id="material2" class="domain.Materials">
+		<property name="munny" value="150" />
+		<property name="mytrhil" value="80" />
+		<property name="gummiCoal" value="70" />
+	</bean>
+	
+	<bean id="material3" class="domain.Materials">
+		<property name="munny" value="30" />
+		<property name="mytrhil" value="20" />
+		<property name="gummiCoal" value="10" />
+	</bean>
+	
+	<bean id="material4" class="domain.Materials">
+		<property name="munny" value="40" />
+		<property name="mytrhil" value="30" />
+		<property name="gummiCoal" value="15" />
+	</bean>
+	<bean id="material5" class="domain.Materials">
+		<property name="munny" value="0" />
+		<property name="mytrhil" value="0" />
+		<property name="gummiCoal" value="0" />
+	</bean>
+	
+	<!-- FACTION -->
+	<bean id="faction1" class="domain.Faction">
+		<property name="name" value="Light" />
+		<property name="powerUpDescription" value="You will collect 10% more of materials" />
+		<property name="extraResources" value="0.1" />
+		<property name="extraAttack" value="0.0" />
+		<property name="extraDefense" value="0.0" />
+		<property name="galaxy" value="1" />
+	</bean>
+	
+	<bean id="faction2" class="domain.Faction">
+		<property name="name" value="Darkness" />
+		<property name="powerUpDescription" value="Your troops will have 5% more of attack" />
+		<property name="extraResources" value="0.0" />
+		<property name="extraAttack" value="0.05" />
+		<property name="extraDefense" value="0.0" />
+		<property name="galaxy" value="2" />
+	</bean>
+	
+	<!-- BATTLE -->
+	<bean id="battle1" class="domain.Battle">
+		<property name="luckAttacker" value="0.1" />
+		<property name="luckDeffender" value="0.0" />
+		<property name="isWon" value="true" />
+		<property name="attackerOwner" value="true" />
+		<property name="wonOrLostMaterials" ref="material3" />
+		<property name="attacker" ref="player1" />
+		<property name="deffender" ref="player2" />
+		<property name="balance" value="Has ganado" />
+	</bean>
+	
+	<bean id="battle2" class="domain.Battle">
+		<property name="luckAttacker" value="0.0" />
+		<property name="luckDeffender" value="0.2" />
+		<property name="isWon" value="false" />
+		<property name="attackerOwner" value="false" />
+		<property name="wonOrLostMaterials" ref="material4" />
+		<property name="attacker" ref="player1" />
+		<property name="deffender" ref="player2" />
+		<property name="balance" value="Has perdido" />
+	</bean>
+	
+	<bean id="battle3" class="domain.Battle">
+		<property name="luckAttacker" value="0.3" />
+		<property name="luckDeffender" value="0.0" />
+		<property name="isWon" value="true" />
+		<property name="attackerOwner" value="true" />
+		<property name="wonOrLostMaterials" ref="material3" />
+		<property name="attacker" ref="player2" />
+		<property name="deffender" ref="player3" />
+		<property name="balance" value="Has ganado" />
+	</bean>
+	
+	<bean id="battle4" class="domain.Battle">
+		<property name="luckAttacker" value="0.0" />
+		<property name="luckDeffender" value="0.2" />
+		<property name="isWon" value="false" />
+		<property name="attackerOwner" value="false" />
+		<property name="wonOrLostMaterials" ref="material4" />
+		<property name="attacker" ref="player2" />
+		<property name="deffender" ref="player3" />
+		<property name="balance" value="Has perdido" />
+	</bean>
+	
+	<bean id="battle5" class="domain.Battle">
+		<property name="luckAttacker" value="0.5" />
+		<property name="luckDeffender" value="0.0" />
+		<property name="isWon" value="true" />
+		<property name="attackerOwner" value="true" />
+		<property name="wonOrLostMaterials" ref="material3" />
+		<property name="attacker" ref="player5" />
+		<property name="deffender" ref="player1" />
+		<property name="balance" value="Has ganado" />
+	</bean>
+	
+	<bean id="battle6" class="domain.Battle">
+		<property name="luckAttacker" value="0.0" />
+		<property name="luckDeffender" value="0.1" />
+		<property name="isWon" value="false" />
+		<property name="attackerOwner" value="false" />
+		<property name="wonOrLostMaterials" ref="material4" />
+		<property name="attacker" ref="player5" />
+		<property name="deffender" ref="player1" />
+		<property name="balance" value="Has perdido" />
+	</bean>
+	
+	<!-- BUILT -->
+	<bean id="built1" class="domain.Built">
+		<property name="lvl" value="10" />
+		<property name="creationDate" value="05/04/2018" />
+		<!-- <property name="activationDate" value="" /> -->
+		<property name="keybladeWielder" ref="player1" />
+		<!-- <property name="troop" ref="" />
+		<property name="gummiShip" ref="" /> -->
+		<property name="building" ref="defense1" />
+	</bean>
+	
+	<bean id="built2" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<!-- <property name="activationDate" value="05/04/2018 12:06" /> -->
+		<property name="keybladeWielder" ref="player1" />
+		<!-- <property name="troop" ref="" />
+		<property name="gummiShip" ref="" /> -->
+		<property name="building" ref="livelihood1" />
+	</bean>
+	
+	<bean id="built3" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<!-- <property name="activationDate" value="" /> -->
+		<property name="keybladeWielder" ref="player1" />
+		<!-- <property name="troop" ref="" />
+		<property name="gummiShip" ref="" /> -->
+		<property name="building" ref="warehouse1" />
+	</bean>
+	
+	<bean id="built4" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<property name="keybladeWielder" ref="player1" />
+		<property name="troop" ref="troop1" />
+		<property name="building" ref="recruiter1" />
+	</bean>
+	
+	<bean id="built5" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<property name="activationDate" value="05/04/2018 12:08" />
+		<property name="keybladeWielder" ref="player1" />
+		<property name="troop" ref="troop1" />
+		<property name="building" ref="warehouse3" />
+	</bean>
+	
+	<bean id="built6" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<property name="activationDate" value="05/04/2018 12:08" />
+		<property name="keybladeWielder" ref="player1" />
+		<property name="building" ref="recruiter3" />
+	</bean>
+	
+	<bean id="built2.1" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<!-- <property name="activationDate" value="" /> -->
+		<property name="keybladeWielder" ref="player2" />
+		<!-- <property name="troop" ref="" />
+		<property name="gummiShip" ref="" /> -->
+		<property name="building" ref="defense2" />
+	</bean>
+	
+	<bean id="built222" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<property name="activationDate" value="05/04/2018 12:06" />
+		<property name="keybladeWielder" ref="player2" />
+		<!-- <property name="troop" ref="" />
+		<property name="gummiShip" ref="" /> -->
+		<property name="building" ref="livelihood2" />
+	</bean>
+	
+	<bean id="built2.3" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<!-- <property name="activationDate" value="" /> -->
+		<property name="keybladeWielder" ref="player2" />
+		<!-- <property name="troop" ref="" />
+		<property name="gummiShip" ref="" /> -->
+		<property name="building" ref="warehouse2" />
+	</bean>
+	
+	<bean id="built2.4" class="domain.Built">
+		<property name="lvl" value="1" />
+		<property name="creationDate" value="05/04/2018" />
+		<property name="activationDate" value="05/04/2018 12:08" />
+		<property name="keybladeWielder" ref="player2" />
+		<property name="troop" ref="troop2" />
+		<property name="building" ref="recruiter2" />
+	</bean>
+	<!-- REQUIREMENT -->
+	<bean id="requirement1" class="domain.Requirement">
+		<property name="lvl" value="1" />
+		<property name="mainBuilding" ref="recruiter1"></property>
+		<property name="requiredBuilding" ref="warehouse1"></property>
+	
+	</bean>
+	
+	<bean id="requirement2" class="domain.Requirement">
+		<property name="lvl" value="1" />
+		<property name="mainBuilding" ref="defense3"></property>
+		<property name="requiredBuilding" ref="defense2"></property>
+	
+	</bean>
+	<!-- BUILDING -->
+	<bean id="defense1" class="domain.Defense">
+		<property name="name" value="Defense Towers" />
+		<property name="description" value="Defensive towers" />
+		<property name="photo" value="./images/buildings/defense.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.3" />
+		<property name="timeToConstruct" value="5" />
+		<property name="contentManager" ref="manager1" />
+		<property name="defense" value="100" />
+		<property name="extraDefensePerLvl" value="0.25" />
+	</bean>
+	
+	<bean id="defense3" class="domain.Defense">
+		<property name="name" value="Defense 3" />
+		<property name="description" value="Defensive towers" />
+		<property name="photo" value="./images/buildings/defense.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="false" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.3" />
+		<property name="timeToConstruct" value="5" />
+		<property name="contentManager" ref="manager1" />
+		<property name="defense" value="100" />
+		<property name="extraDefensePerLvl" value="0.25" />
+	</bean>
+	
+	<bean id="livelihood1" class="domain.Livelihood">
+		<property name="name" value="Livelihood Number 1" />
+		<property name="description" value="This is the Livehood number 1" />
+		<property name="photo" value="./images/buildings/livelihood.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.4" />
+		<property name="timeToConstruct" value="6" />
+		<property name="contentManager" ref="manager1" />
+		<property name="materials" ref="material3" />
+		<property name="extraMaterialsPerLvl" value="0.3" />
+		<property name="timeToRecollect" value="40" />
+		<property name="lessTimePerLvl" value="0.5" />
+	</bean>
+	
+	<bean id="warehouse1" class="domain.Warehouse">
+		<property name="name" value="Warehouse Number 1" />
+		<property name="description" value="This is the Warehouse number 1" />
+		<property name="photo" value="./images/buildings/warehouse.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.6" />
+		<property name="timeToConstruct" value="8" />
+		<property name="contentManager" ref="manager1" />
+		<property name="materialsSlots" ref="material4" />
+		<property name="troopSlots" value="10" />
+		<property name="gummiSlots" value="2" />
+		<property name="extraSlotsPerLvl" value="0.5" />
+	</bean>
+	
+	<bean id="warehouse3" class="domain.Warehouse">
+		<property name="name" value="Warehouse Number 3" />
+		<property name="description" value="This is the Warehouse number 3" />
+		<property name="photo" value="./images/buildings/warehouse.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="false" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.6" />
+		<property name="timeToConstruct" value="8" />
+		<property name="contentManager" ref="manager1" />
+		<property name="materialsSlots" ref="material4" />
+		<property name="troopSlots" value="10" />
+		<property name="gummiSlots" value="2" />
+		<property name="extraSlotsPerLvl" value="0.5" />
+	</bean>
+	
+	<bean id="recruiter1" class="domain.Recruiter">
+		<property name="name" value="Recruiter Number 1" />
+		<property name="description" value="This is the Recruiter number 1" />
+		<property name="photo" value="./images/buildings/recruiter.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.4" />
+		<property name="timeToConstruct" value="8" />
+		<property name="contentManager" ref="manager1" />
+		<property name="gummiShips" >
+			<list>
+				<ref bean="gummiShip1"/>
+			</list>
+		</property>
+		<property name="troops">
+			<list>
+				<ref bean="troop1"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="defense2" class="domain.Defense">
+		<property name="name" value="Defense Towers 2" />
+		<property name="description" value="Defensive towers 2" />
+		<property name="photo" value="./images/buildings/defense.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.3" />
+		<property name="timeToConstruct" value="5" />
+		<property name="contentManager" ref="manager1" />
+		<property name="defense" value="100" />
+		<property name="extraDefensePerLvl" value="0.25" />
+	</bean>
+	
+	<bean id="livelihood2" class="domain.Livelihood">
+		<property name="name" value="Livelihood Number 2" />
+		<property name="description" value="This is the Livehood number 2" />
+		<property name="photo" value="./images/buildings/livelihood.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.4" />
+		<property name="timeToConstruct" value="6" />
+		<property name="contentManager" ref="manager1" />
+		<property name="materials" ref="material3" />
+		<property name="extraMaterialsPerLvl" value="0.3" />
+		<property name="timeToRecollect" value="40" />
+		<property name="lessTimePerLvl" value="0.5" />
+	</bean>
+	
+	<bean id="warehouse2" class="domain.Warehouse">
+		<property name="name" value="Warehouse Number 2" />
+		<property name="description" value="This is the Warehouse number 2" />
+		<property name="photo" value="./images/buildings/warehouse.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.6" />
+		<property name="timeToConstruct" value="8" />
+		<property name="contentManager" ref="manager1" />
+		<property name="materialsSlots" ref="material4" />
+		<property name="troopSlots" value="10" />
+		<property name="gummiSlots" value="2" />
+		<property name="extraSlotsPerLvl" value="0.5" />
+	</bean>
+	
+	<bean id="recruiter2" class="domain.Recruiter">
+		<property name="name" value="Recruiter Number 2" />
+		<property name="description" value="This is the Recruiter number 2" />
+		<property name="photo" value="./images/buildings/recruiter.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="true" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.4" />
+		<property name="timeToConstruct" value="8" />
+		<property name="contentManager" ref="manager1" />
+		<property name="gummiShips" >
+			<list>
+				<ref bean="gummiShip2"/>
+			</list>
+		</property>
+		<property name="troops">
+			<list>
+				<ref bean="troop2"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="recruiter3" class="domain.Recruiter">
+		<property name="name" value="Recruiter Number 3" />
+		<property name="description" value="This is the Recruiter number 3" />
+		<property name="photo" value="./images/buildings/recruiter.png" />
+		<property name="maxLvl" value="10" />
+		<property name="isFinal" value="false" />
+		<property name="cost" ref="material4" />
+		<property name="extraCostPerLvl" value="0.4" />
+		<property name="timeToConstruct" value="8" />
+		<property name="contentManager" ref="manager1" />
+	</bean>
+	
+	<!-- GUMMISHIPS AND TROOPS -->
+	<bean id="troop1" class="domain.Troop">
+		<property name="attack" value="150" />
+		<property name="defense" value="80" />
+		<property name="cost" ref="material3" />
+		<property name="timeToRecruit" value="20" />
+		<property name="recruiterRequiredLvl" value="1" />
+		<property name="name" value="Troopers" />
+		<property name="recruiter" ref="recruiter1" />
+	</bean>
+	
+	<bean id="gummiShip1" class="domain.GummiShip">
+		<property name="slots" value="150" />
+		<property name="cost" ref="material2" />
+		<property name="timeToRecruit" value="50" />
+		<property name="recruiterRequiredLvl" value="1" />
+		<property name="name" value="Interstellar" />
+		<property name="recruiter" ref="recruiter1" />
+	</bean>
+	
+	<bean id="troop2" class="domain.Troop">
+		<property name="attack" value="190" />
+		<property name="defense" value="50" />
+		<property name="cost" ref="material4" />
+		<property name="timeToRecruit" value="20" />
+		<property name="recruiterRequiredLvl" value="1" />
+		<property name="name" value="Soldiers" />
+		<property name="recruiter" ref="recruiter2" />
+	</bean>
+	
+	<bean id="gummiShip2" class="domain.GummiShip">
+		<property name="slots" value="220" />
+		<property name="cost" ref="material1" />
+		<property name="timeToRecruit" value="50" />
+		<property name="recruiterRequiredLvl" value="1" />
+		<property name="name" value="Platon" />
+		<property name="recruiter" ref="recruiter2" />
+	</bean>
+	
+	<bean id="troop3" class="domain.Troop">
+		<property name="attack" value="170" />
+		<property name="defense" value="60" />
+		<property name="cost" ref="material4" />
+		<property name="timeToRecruit" value="20" />
+		<property name="recruiterRequiredLvl" value="1" />
+		<property name="name" value="Explorers" />
+		<property name="recruiter" ref="recruiter2" />
+	</bean>
+	
+	
+	<!-- RRECRUITED -->
+	<bean id="recruited1" class="domain.Recruited">
+		<property name="storageBuilding" ref="built3" />
+		<property name="gummiShip" ref="gummiShip1" />
+		<!-- <property name="troop" ref="troop1" /> -->
+	</bean>
+	
+	<bean id="recruited2" class="domain.Recruited">
+		<property name="storageBuilding" ref="built3" />
+		<!-- <property name="gummiShip" ref="gummiShip2" /> -->
+		<property name="troop" ref="troop1" />
+	</bean>
+	
+	<bean id="recruited3" class="domain.Recruited">
+		<property name="storageBuilding" ref="built2.3" />
+		<property name="gummiShip" ref="gummiShip2" />
+		<!-- <property name="troop" ref="troop2" /> -->
+	</bean>
+	
+	<bean id="recruited4" class="domain.Recruited">
+		<property name="storageBuilding" ref="built2.3" />
+		<!-- <property name="gummiShip" ref="gummiShip2" /> -->
+		<property name="troop" ref="troop2" />
+	</bean>
+	
+	<bean id="recruited5" class="domain.Recruited">
+		<property name="storageBuilding" ref="built3" />
+		<!-- <property name="gummiShip" ref="gummiShip2" /> -->
+		<property name="troop" ref="troop2" />
+	</bean>
+	
+	<bean id="recruited6" class="domain.Recruited">
+		<property name="storageBuilding" ref="built3" />
+		<property name="gummiShip" ref="gummiShip2" />
+		<!-- <property name="troop" ref="troop1" /> -->
+	</bean>
+	
+	<!-- CONFIGURATION -->
+	<bean id="configuration" class="domain.Configuration">
+		<property name="dailyMaterials" ref="material3" />
+		<property name="baseMaterials" ref="material1" />
+		<property name="orgMessages" value="50" />
+		<property name="percentageWinAttacker" value="0.6" />
+		<property name="percentageWinDefender" value="0.5" />
+		<property name="worldSlots" value="7" />
+	</bean>
+	
+	<!-- ITEMS -->
+	<bean id="item1" class="domain.Item">
+		<property name="duration" value="500" />
+		<property name="expiration" value="15" />
+		<property name="extra" value="0.2" />
+		<property name="munnyCost" value="60" />
+		<property name="type" value="ATTACKBOOST" />
+		<property name="name" value="Atack Potion" />
+		<property name="description" value="With this potion You will increase your atack 20%" />
+		<property name="onSell" value="true" />
+		<property name="contentManager" ref="manager1" />
+	</bean>
+	
+	<bean id="item2" class="domain.Item">
+		<property name="duration" value="500" />
+		<property name="expiration" value="15" />
+		<property name="extra" value="0.2" />
+		<property name="munnyCost" value="60" />
+		<property name="type" value="DEFENSEBOOST" />
+		<property name="name" value="Defense Potion" />
+		<property name="description" value="With this potion You will increase your defense 20%" />
+		<property name="onSell" value="true" />
+		<property name="contentManager" ref="manager1" />
+	</bean>
+	
+	<bean id="item3" class="domain.Item">
+		<property name="duration" value="500" />
+		<property name="expiration" value="15" />
+		<property name="extra" value="0.4" />
+		<property name="munnyCost" value="200" />
+		<property name="type" value="ATTACKBOOST" />
+		<property name="name" value="Atack Potion XL" />
+		<property name="description" value="With this potion You will increase your atack 40%" />
+		<property name="onSell" value="true" />
+		<property name="contentManager" ref="manager1" />
+	</bean>
+	
+	<bean id="item4" class="domain.Item">
+		<property name="duration" value="500" />
+		<property name="expiration" value="15" />
+		<property name="extra" value="0.4" />
+		<property name="munnyCost" value="250" />
+		<property name="type" value="DEFENSEBOOST" />
+		<property name="name" value="Defense Potion XL" />
+		<property name="description" value="With this potion You will increase your defense 40%" />
+		<property name="onSell" value="true" />
+		<property name="contentManager" ref="manager1" />
+	</bean>
+	
+	<bean id="item5" class="domain.Item">
+		<property name="duration" value="500" />
+		<property name="expiration" value="15" />
+		<property name="extra" value="0.4" />
+		<property name="munnyCost" value="250" />
+		<property name="type" value="SHIELD" />
+		<property name="name" value="Protective Shield" />
+		<property name="description" value="With this shield You will not be atacked" />
+		<property name="onSell" value="true" />
+		<property name="contentManager" ref="manager1" />
+	</bean>
+	
+	<bean id="item6" class="domain.Item">
+		<property name="duration" value="800" />
+		<property name="expiration" value="20" />
+		<property name="extra" value="0.3" />
+		<property name="munnyCost" value="210" />
+		<property name="type" value="RESOURCEBOOST" />
+		<property name="name" value="Resource Boost" />
+		<property name="description" value="With this boost You will have resources 30% faster" />
+		<property name="onSell" value="true" />
+		<property name="contentManager" ref="manager1" />
+	</bean>
+	
+	<!-- BANNED -->
+	<bean id="banned1" class="domain.Banned">
+		<property name="banDate" value="01/04/2018 12:05" />
+		<property name="duration" value="99999999" />
+		<property name="reason" value="Cheats" />
+		<property name="isValid" value="true" />
+		<property name="actor" ref="player5" />
+	</bean>
+	
+	
+	<!-- REPORT -->
+		<bean id="report1" class="domain.Report">
+		<property name="isBug" value="false" />
+		<property name="status" value="RESOLVED" />
+		<property name="title" value="prueba" />
+		<property name="content" value="contenido de prueba" />
+		<property name="photos">
+			<list></list>
+		</property>
+		<property name="date" value="05/04/2016"></property>
+		<property name="keybladeWielder" ref="player1"></property>
+		<property name="reportUpdates">
+			<list><ref bean="reportUpdate1"/></list>
+		</property>
+		</bean>
+		
+		<bean id="report2" class="domain.Report">
+		<property name="isBug" value="false" />
+		<property name="status" value="RESOLVED" />
+		<property name="title" value="prueba" />
+		<property name="content" value="contenido de prueba" />
+		<property name="photos">
+			<list></list>
+		</property>
+		<property name="date" value="05/04/2016"></property>
+		<property name="keybladeWielder" ref="player2"></property>
+		<property name="reportUpdates">
+			<list><ref bean="reportUpdate2"/></list>
+		</property>
+		</bean>
+		
+		<bean id="report3" class="domain.Report">
+		<property name="isBug" value="false" />
+		<property name="status" value="ONHOLD" />
+		<property name="title" value="prueba" />
+		<property name="content" value="contenido de prueba" />
+		<property name="photos">
+			<list></list>
+		</property>
+		<property name="date" value="05/04/2016"></property>
+		<property name="keybladeWielder" ref="player2"></property>
+		<property name="reportUpdates">
+			<list><ref bean="reportUpdate3"/></list>
+		</property>
+		</bean>
+		
+	<!-- REPORTUPDATE -->
+	<bean id="reportUpdate1" class="domain.ReportUpdate">
+		<property name="status" value="RESOLVED" />
+		<property name="content" value="Imagen caida resubida" />
+		<property name="date" value="01/05/2016 05:05" />
+		<property name="isSuspicious" value="false" />
+		<property name="gameMaster" ref="gm1" />
+	</bean>
+	
+	<bean id="reportUpdate2" class="domain.ReportUpdate">
+		<property name="status" value="RESOLVED" />
+		<property name="content" value="Imagen caida resubida" />
+		<property name="date" value="01/05/2016 05:05" />
+		<property name="isSuspicious" value="false" />
+		<property name="administrator" ref="admin" />
+	</bean>
+	
+	<bean id="reportUpdate3" class="domain.ReportUpdate">
+		<property name="status" value="IRRESOLVABLE" />
+		<property name="content" value="Imagen caida resubida" />
+		<property name="date" value="01/05/2016 05:05" />
+		<property name="isSuspicious" value="false" />
+		<property name="gameMaster" ref="gm1" />
+	</bean>
+	
+	
+	<!-- PRIZE -->
+	<bean id="prize1" class="domain.Prize">
+		<property name="materials" ref="material3" />
+		<property name="description" value="Premio por logearse una semana seguida" />
+		<property name="date" value="20/02/2017 00:00" />
+		<property name="keybladeWielder" ref="player1" />
+	</bean>
+	
+	<bean id="prize2" class="domain.Prize">
+		<property name="materials" ref="material3" />
+		<property name="description" value="Premio por logearse dos semana seguida" />
+		<property name="date" value="20/03/2017 00:00" />
+		<property name="keybladeWielder" ref="player1" />
+	</bean>
+	
+	<bean id="prize3" class="domain.Prize">
+		<property name="materials" ref="material3" />
+		<property name="description" value="Premio por logearse una semana seguida" />
+		<property name="date" value="20/02/2017 00:00" />
+		<property name="keybladeWielder" ref="player2" />
+	</bean>
+	
+	<bean id="prize4" class="domain.Prize">
+		<property name="materials" ref="material3" />
+		<property name="description" value="Premio por logearse una semana seguida" />
+		<property name="date" value="20/02/2017 00:00" />
+		<property name="keybladeWielder" ref="player3" />
+	</bean>
+	
+	<bean id="prize5" class="domain.Prize">
+		<property name="materials" ref="material3" />
+		<property name="description" value="Premio por logearse una semana seguida" />
+		<property name="date" value="20/02/2017 00:00" />
+		<property name="keybladeWielder" ref="player4" />
+	</bean>
+	
+	<!-- ORGANIZATION -->
+	<bean id="organization1" class="domain.Organization">
+		<property name="name" value="Iluminati" />
+		<property name="description" value="Asociacion de iluminados" />
+		<property name="creationDate" value="01/02/2015 07:00" />
+	</bean>
+	
+	<!-- INVITATION -->
+	<bean id="invitation1" class="domain.Invitation">
+		<property name="date" value="01/02/2015" />
+		<property name="invitationStatus" value="ACCEPTED" />
+		<property name="orgRange" value="MASTER" />
+		<property name="content" value="¿Quieres unirte a mi organización?" />
+		<property name="keybladeWielder" ref="player1" />
+		<property name="organization" ref="organization1" />
+	</bean>
+	
+	<bean id="invitation2" class="domain.Invitation">
+		<property name="date" value="20/02/2015" />
+		<property name="invitationStatus" value="ACCEPTED" />
+		<property name="orgRange" value="OFFICER" />
+		<property name="content" value="¿Quieres unirte a mi organización?" />
+		<property name="keybladeWielder" ref="player3" />
+		<property name="organization" ref="organization1" />
+	</bean>
+	
+	<bean id="invitation3" class="domain.Invitation">
+		<property name="date" value="20/02/2015" />
+		<property name="invitationStatus" value="ACCEPTED" />
+		<property name="orgRange" value="GUEST" />
+		<property name="content" value="¿Quieres unirte a mi organización?" />
+		<property name="keybladeWielder" ref="player4" />
+		<property name="organization" ref="organization1" />
+	</bean>
+	
+	
+	<!-- LEGALTEXT -->
+
+	
+	
+	<bean id="legalText1" class="domain.LegalText">
+		<property name="type" value="TERMS"/>
+		<property name="codeLanguage" value="es"/>
+		<!-- <property name="body" value="Los articulos no pueden contener palabras malsonantes"/> -->
+		<property name="body" value="&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;  En ACME-BATTLE las organizaciones deben contener nombre y descripciones que no inciten al odio o discriminanción de ningún tipo. Tampoco el incentivo del bullying en los chats ni nombres de usuarios que dañen la imagen de la empresa. El uso de usuarios dentro del juego con motivo espiatorio y hacking será denunciado y resuelto por vías judiciales. En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informaci&amp;oacute;n y de Comercio Electr&amp;oacute;nico (LSSI-CE), ACME CO., INC informa que es titular de este sitio web. De acuerdo con la exigencia del art&amp;iacute;culo 10 de la citada Ley, ACME CO., INC informa de los siguientes datos:&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;El titular de este sitio web es ACME CO., INC.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal; margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;USUARIO Y R&amp;Eacute;GIMEN DE RESPONSABILIDADES&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;La navegaci&amp;oacute;n, acceso y uso por el sitio web de ACME CO., INC confiere la condici&amp;oacute;n de usuario, por la que se aceptan, desde la navegaci&amp;oacute;n por el sitio web de ACME CO., INC, todas las condiciones de uso aqu&amp;iacute; establecidas sin perjuicio de la aplicaci&amp;oacute;n de la correspondiente normativa de obligado cumplimiento legal seg&amp;uacute;n el caso.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;El sitio web de ACME CO., INC proporciona gran diversidad de informaci&amp;oacute;n, servicios y datos. El usuario asume su responsabilidad en el uso correcto del sitio web. Esta responsabilidad se extender&amp;aacute; a:&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;- La veracidad y licitud de las informaciones aportadas por el usuario en los formularios extendidos por ACME CO., INC para el acceso a ciertos contenidos o servicios ofrecidos por el web.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;- El uso de la informaci&amp;oacute;n, servicios y datos ofrecidos por ACME CO., INC contrariamente a lo dispuesto por las presentes condiciones, la Ley, la moral, las buenas costumbres o el orden p&amp;uacute;blico, o que de cualquier otro modo puedan suponer lesi&amp;oacute;n de los derechos de terceros o del mismo funcionamiento del sitio web.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;  margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;POL&amp;Iacute;TICA DE ENLACES Y EXENCIONES DE RESPONSABILIDAD&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;ACME CO., INC no se hace responsable del contenido de los sitios web a los que el usuario pueda acceder a trav&amp;eacute;s de los enlaces establecidos en su sitio web y declara que en ning&amp;uacute;n caso proceder&amp;aacute; a examinar o ejercitar ning&amp;uacute;n tipo de control sobre el contenido de otros sitios de la red. Asimismo, tampoco garantizar&amp;aacute; la disponibilidad t&amp;eacute;cnica, exactitud, veracidad, validez o legalidad de sitios ajenos a su propiedad a los que se pueda acceder por medio de los enlaces.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal; &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;ACME CO., INC declara haber adoptado todas las medidas necesarias para evitar cualquier da&amp;ntilde;o a los usuarios de su sitio web, que pudieran derivarse de la navegaci&amp;oacute;n por su sitio web. En consecuencia, ACME CO., INC no se hace responsable, en ning&amp;uacute;n caso, de los eventuales da&amp;ntilde;os que por la navegaci&amp;oacute;n por Internet pudiera sufrir el usuario.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;  : white; margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;MODIFICACIONES&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;ACME CO., INC se reserva el derecho a realizar las modificaciones que considere oportunas, sin aviso previo, en el contenido de su sitio web. Tanto en lo referente a los contenidos del sitio web, como en las condiciones de uso del mismo, o en las condiciones generales de contrataci&amp;oacute;n. Dichas modificaciones podr&amp;aacute;n realizarse a trav&amp;eacute;s de su sitio web por cualquier forma admisible en derecho y ser&amp;aacute;n de obligado cumplimiento durante el tiempo en que se encuentren publicadas en el web y hasta que no sean modificadas v&amp;aacute;lidamente por otras posteriores.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;SERVICIOS DE CONTRATACI&amp;Oacute;N POR INTERNET&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;Ciertos contenidos de la website de ACME CO., INC contienen la posibilidad de contrataci&amp;oacute;n por Internet. El uso de los mismos requerir&amp;aacute; la lectura y aceptaci&amp;oacute;n obligatoria de las condiciones generales de contrataci&amp;oacute;n establecidas al efecto por ACME CO., INC.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;PROTECCI&amp;Oacute;N DE DATOS&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;De conformidad con lo que establece la Ley Org&amp;aacute;nica 15/1999 de Protecci&amp;oacute;n de Datos de Car&amp;aacute;cter Personal (LOPD), ACME CO., INC informa a los usuarios de su sitio web que los datos personales recabados por la empresa, mediante los formularios sitos en sus p&amp;aacute;ginas, ser&amp;aacute;n introducidos en un fichero automatizado bajo la responsabilidad de ACME CO., INC, con la finalidad de poder facilitar, agilizar y cumplir los compromisos establecidos entre ambas partes.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;Asimismo, ACME CO., INC informa de la posibilidad de ejercer los derechos de acceso, rectificaci&amp;oacute;n, cancelaci&amp;oacute;n y oposici&amp;oacute;n mediante un escrito a la direcci&amp;oacute;n: Av. Reina Mercedes s/n, 41012, Sevilla, Departamento de Lenguajes y Sistemas Inform&amp;aacute;ticos.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;Mientras el usuario no comunique lo contrario a ACME CO., INC, &amp;eacute;sta entender&amp;aacute; que sus datos no han sido modificados, que el usuario se compromete a notificar a ACME CO., INC cualquier variaci&amp;oacute;n y que ACME CO., INC tiene el consentimiento para utilizarlos a fin de poder fidelizar la relaci&amp;oacute;n entre las partes.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;PROPIEDAD INTELECTUAL E INDUSTRIAL&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;ACME CO., INC por s&amp;iacute; misma o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su p&amp;aacute;gina web, as&amp;iacute; como de los elementos contenidos en la misma (a t&amp;iacute;tulo enunciativo, im&amp;aacute;genes, sonido, audio, v&amp;iacute;deo, software o textos; marcas o logotipos, combinaciones de colores, estructura y dise&amp;ntilde;o, selecci&amp;oacute;n de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.), titularidad de ACME CO., INC. Ser&amp;aacute;n, por consiguiente, obras protegidas como propiedad intelectual por el ordenamiento jur&amp;iacute;dico espa&amp;ntilde;ol, si&amp;eacute;ndoles aplicables tanto la normativa espa&amp;ntilde;ola y comunitaria en este campo, como los tratados internacionales relativos a la materia y suscritos por Espa&amp;ntilde;a.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;Todos los derechos reservados. En virtud de lo dispuesto en los art&amp;iacute;culos 8 y 32.1, p&amp;aacute;rrafo segundo, de la Ley de Propiedad Intelectual, quedan expresamente prohibidas la reproducci&amp;oacute;n, la distribuci&amp;oacute;n y la comunicaci&amp;oacute;n p&amp;uacute;blica, incluida su modalidad de puesta a disposici&amp;oacute;n, de la totalidad o parte de los contenidos de esta p&amp;aacute;gina web, con fines comerciales, en cualquier soporte y por cualquier medio t&amp;eacute;cnico, sin la autorizaci&amp;oacute;n de ACME CO., INC.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;El usuario se compromete a respetar los derechos de Propiedad Intelectual e Industrial titularidad de ACME CO., INC. Podr&amp;aacute; visualizar los elementos del portal e incluso imprimirlos, copiarlos y almacenarlos en el disco duro de su ordenador o en cualquier otro soporte f&amp;iacute;sico siempre y cuando sea, &amp;uacute;nica y exclusivamente, para su uso personal y privado. El usuario deber&amp;aacute; abstenerse de suprimir, alterar, eludir o manipular cualquier dispositivo de protecci&amp;oacute;n o sistema de seguridad que estuviera instalado en las p&amp;aacute;ginas de ACME CO., INC.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;ACCIONES LEGALES, LEGISLACI&amp;Oacute;N APLICABLE Y JURISDICCI&amp;Oacute;N&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;ACME CO., INC se reserva, asimismo, la facultad de presentar las acciones civiles o penales que considere oportunas por la utilizaci&amp;oacute;n indebida de su sitio web y contenidos, o por el incumplimiento de las presentes condiciones.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;La relaci&amp;oacute;n entre el usuario y el prestador se regir&amp;aacute; por la normativa vigente y de aplicaci&amp;oacute;n en el territorio espa&amp;ntilde;ol. De surgir cualquier controversia las partes podr&amp;aacute;n someter sus conflictos a arbitraje o acudir a la jurisdicci&amp;oacute;n ordinaria cumpliendo con las normas sobre jurisdicci&amp;oacute;n y competencia al respecto. ACME CO., INC tiene su domicilio en SEVILLA, Espa&amp;ntilde;a.&lt;/span&gt;&lt;/p&gt;"/>
+	</bean>
+	<bean id="legalText2" class="domain.LegalText">
+		<property name="type" value="TERMS"/>
+		<property name="codeLanguage" value="en"/>
+		<!-- <property name="body" value="Articles can not have bad words"/> -->
+		<property name="body" value="&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;&quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt; In ACME-BATTLE the organizations must not have names or descriptcion that can have discrimination or incite hatred in any type. Neighet the use of the chats for do bullying or any abuse, that could damage the image of the enterprise. The use of players or any other account with hacking or malicious goals must be reported and resolved by Spanish Courts. In compliance with Law 34/2002, of July 11, on Services of the Information Society and Electronic Commerce (LSSI-CE), ACME CO., INC. Informs that it is the owner of this website. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;In accordance with the requirement of article 10 of the aforementioned Law, ACME CO., INC reports the following information:&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The owner of this website is ACME CO., INC.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;USER AND REGIME OF RESPONSIBILITIES&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The navigation, access and use by the website of ACME CO., INC confers the condition of user, by which they accept, from browsing the website of ACME CO., INC, all conditions of use here established without prejudice to the application of the corresponding regulations of mandatory legal compliance as the case may be.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The ACME CO., INC. Website provides a wide variety of information, services and data. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The user assumes his responsibility in the correct use of the website. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;This responsibility will extend to:&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;- The veracity and legality of the information provided by the user in the forms issued by ACME CO., INC for access to certain content or services offered by the web.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;- The use of the information, services and data offered by ACME CO., INC contrary to the provisions of these conditions, the Law, morals, good customs or public order, or that may otherwise result in injury of the rights of third parties or the operation of the website.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;LINKS POLICY AND LIABILITY EXEMPTIONS&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACME CO., INC is not responsible for the content of the websites that the user can access through the links established on its website and declares that in no case will proceed to examine or exercise any type of control over the content from other sites in the network. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Likewise, it will not guarantee the technical availability, accuracy, veracity, validity or legality of sites external to your property that can be accessed through the links.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACME CO., INC. Declares that it has adopted all the necessary measures to avoid any damage to users of its website, which may arise from browsing its website. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;As a result, ACME CO., INC is not responsible, in any case, for any damages that the user may suffer from browsing the Internet.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;MODIFICATIONS&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACME CO., INC reserves the right to make the modifications it deems appropriate, without prior notice, in the content of its website. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Both with regard to the contents of the website, as in the conditions of use thereof, or in the general conditions of contract. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Said modifications may be made through its website by any admissible form in law and shall be binding during the time they are published on the website and until they are validly modified by subsequent ones.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;INTERNET CONTRACTING SERVICES&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Certain contents of the ACME CO., INC. Website contain the possibility of contracting by Internet. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The use of the same will require the reading and obligatory acceptance of the general contracting conditions established for this purpose by ACME CO., INC.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;DATA PROTECTION&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;In accordance with the provisions of the Organic Law 15/1999 on the Protection of Personal Data (LOPD), ACME CO., INC informs the users of its website that the personal data collected by the company, through the forms located in their pages, they will be entered in an automated file under the responsibility of ACME CO., INC, with the purpose of facilitating, expediting and fulfilling the commitments established between both parties.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Likewise, ACME CO., INC. Informs of the possibility of exercising the rights of access, rectification, cancellation and opposition by writing to the address: Av. Reina Mercedes s / n, 41012, Seville, Department of Languages &amp;#8203;&amp;#8203;and Computer Systems.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;While the user does not communicate otherwise to ACME CO., INC, it will understand that their data has not been modified, that the user agrees to notify ACME CO., INC any variation and that ACME CO., INC. Has the consent to use them in order to be able to fidelize the relationship between the parties.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;INTELLECTUAL AND INDUSTRIAL PROPERTY&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACME CO., INC. By itself or as an assignee, is the owner of all the intellectual and industrial property rights of its website, as well as the elements contained therein (for example, images, sound, audio, video) , software or texts, trademarks or logos, combinations of colors, structure and design, selection of used materials, computer programs necessary for its operation, access and use, etc.), owned by ACME CO., INC. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They will, therefore, works protected as intellectual property by the Spanish legal system, being applicable both Spanish and European regulations in this field, as well as international treaties relating to the subject and signed by Spain.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;All rights reserved. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;By virtue of the provisions of articles 8 and 32.1, second paragraph, of the Law on Intellectual Property, the reproduction, distribution and public communication, including the method of making them available, of all or part of the articles is expressly prohibited. contents of this web page, with commercial ends, in any support and by any technical means, without the authorization of ACME CO., INC.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The user undertakes to respect the Intellectual and Industrial Property rights owned by ACME CO., INC. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;You can visualize the elements of the portal and even print them, copy them and store them on your computer&apos;s hard drive or on any other physical medium, as long as it is solely and exclusively for your personal and private use. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The user must refrain from deleting, altering, evading or manipulating any protection device or security system that was installed on the pages of ACME CO., INC.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify; line-height: normal;   margin: 7.5pt 0cm 7.5pt 0cm;&quot;&gt;&lt;span style=&quot;font-size: 13.5pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;LEGAL ACTIONS, APPLICABLE LEGISLATION AND JURISDICTION&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACME CO., INC. Also reserves the right to file civil or criminal actions it deems appropriate for the improper use of its website and content, or for the breach of these conditions.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 7.5pt; text-align: justify; line-height: normal;  &quot;&gt;&lt;span style=&quot;font-size: 9.0pt; &quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The relationship between the user and the provider will be governed by the regulations in force and applicable in Spanish territory. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;If any dispute arises, the parties may submit their disputes to arbitration or go to the ordinary jurisdiction, complying with the rules on jurisdiction and competence in this regard. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACME CO., INC. Has its address in SEVILLA, Spain.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; " />
+	</bean>
+	<bean id="legalText3" class="domain.LegalText">
+		<property name="type" value="COOKIES"/>
+		<property name="codeLanguage" value="es"/>
+		<!-- <property name="body" value="Esta web usa cookies para su mejor funcionamiento"/> -->
+		<property name="body" value="&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Una Cookie es un fichero que se descarga en su ordenador al acceder a determinadas p&amp;aacute;ginas web. Las cookies permiten a una p&amp;aacute;gina web, entre otras cosas, almacenar y recuperar informaci&amp;oacute;n sobre los h&amp;aacute;bitos de navegaci&amp;oacute;n de un usuario o de su equipo y, dependiendo de la informaci&amp;oacute;n que contenga y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Las cookies son esenciales para el funcionamiento de internet, aportando innumerables ventajas en la prestaci&amp;oacute;n de servicios interactivos, facilit&amp;aacute;ndole la navegaci&amp;oacute;n y usabilidad de nuestra web.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;La informaci&amp;oacute;n que le proporcionamos a continuaci&amp;oacute;n, le ayudar&amp;aacute; a comprender los diferentes tipos de cookies:&lt;/span&gt;&lt;/p&gt;&lt;table class=&quot;tablacookies&quot; border=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td colspan=&quot;3&quot;&gt;&lt;table border=&quot;1&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td colspan=&quot;3&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;TIPOS DE COOKIES&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;2&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;SEG&amp;Uacute;N LA ENTIDAD QUE LAS GESTIONE&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies propias&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Son aquellas que se recaban por el propio editor para prestar el servicio solicitado por el usuario.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de tercero&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Son aquellas que son recabadas y gestionadas por un tercero, estas no se pueden considerar propias.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;2&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;SEG&amp;Uacute;N EL PLAZO DE TIEMPO QUE PERMANEZCAN ACTIVADAS&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de sesi&amp;oacute;n&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Recaban datos mientras el usuario navega por la red con la finalidad de prestar el servicio solicitado.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies persistentes&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Se almacenan en el terminal y la informaci&amp;oacute;n obtenida, ser&amp;aacute; utilizada por el responsable de la cookie con la finalidad de prestar el servicio solicitado.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;5&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;SEG&amp;Uacute;N SU FINALIDAD&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies t&amp;eacute;cnicas&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Son las necesarias para la correcta navegaci&amp;oacute;n por la web.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de personalizaci&amp;oacute;n&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Permiten al usuario las caracter&amp;iacute;sticas (idioma) para la navegaci&amp;oacute;n por la website&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de an&amp;aacute;lisis&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Permiten al prestador el an&amp;aacute;lisis vinculado a la navegaci&amp;oacute;n realizada por el usuario, con la finalidad de llevar un seguimiento de uso de la p&amp;aacute;gina web, as&amp;iacute; como realizar estad&amp;iacute;sticas de los contenidos m&amp;aacute;s visitados, n&amp;uacute;mero de visitantes, etc.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies publicitarias&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Permiten al editor incluir en la web, espacios publicitarios, seg&amp;uacute;n el contenido de la propia web.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de publicidad comportamental&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Permiten al editor incluir en la p&amp;aacute;gina web espacios publicitarios seg&amp;uacute;n la informaci&amp;oacute;n obtenida a trav&amp;eacute;s de los h&amp;aacute;bitos de navegaci&amp;oacute;n del usuario.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Seg&amp;uacute;n lo dispuesto en el art&amp;iacute;culo 22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informaci&amp;oacute;n y de Comercio Electr&amp;oacute;nico (LSSI-CE), ACME CO., INC informa de las cookies utilizadas en nuestra website:&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;table class=&quot;tablacookies&quot; style=&quot;width: 588px;&quot; border=&quot;1&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th style=&quot;width: 194px;&quot;&gt;&amp;nbsp;&lt;/th&gt;&lt;th style=&quot;width: 394px;&quot; colspan=&quot;3&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Tipos de Cookies&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;width: 194px;&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies Propias&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de sesion&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies persistentes&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;width: 194px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies tecnicas&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;width: 194px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de personalizacion&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;width: 194px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Cookies de analisis&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; /&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Asimismo, ACME CO., INC informa al usuario de que tiene la posibilidad de configurar su navegador de modo que se le informe de la recepci&amp;oacute;n de cookies, pudiendo, si as&amp;iacute; lo desea, impedir que sean instaladas en su disco duro.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;A continuaci&amp;oacute;n le proporcionamos los enlaces de diversos navegadores, a trav&amp;eacute;s de los cuales podr&amp;aacute; realizar dicha configuraci&amp;oacute;n:&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Firefox desde aqu&amp;iacute;:&amp;nbsp;&lt;a href=&quot;http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we&quot;&gt;http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Chrome desde aqu&amp;iacute;:&amp;nbsp;&lt;a href=&quot;http://support.google.com/chrome/bin/answer.py?hl=es&amp;amp;answer=95647&quot; target=&quot;blank&quot;&gt;http://support.google.com/chrome/bin/answer.py?hl=es&amp;amp;answer=95647&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Explorer desde aqu&amp;iacute;:&amp;nbsp;&lt;a href=&quot;http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10&quot; target=&quot;blank&quot;&gt;http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Safari desde aqu&amp;iacute;:&amp;nbsp;&lt;a href=&quot;https://support.apple.com/kb/ph17191?locale=es_ES&quot; target=&quot;blank&quot;&gt;https://support.apple.com/kb/ph17191?locale=es_ES&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Opera desde aqu&amp;iacute;:&amp;nbsp;&lt;a href=&quot;http://help.opera.com/Windows/11.50/es-ES/cookies.html&quot; target=&quot;blank&quot;&gt;http://help.opera.com/Windows/11.50/es-ES/cookies.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;  En ACME-BATTLE las organizaciones deben contener nombre y descripciones que no inciten al odio o discriminanción de ningún tipo. Tampoco el incentivo del bullying en los chats ni nombres de usuarios que dañen la imagen de la empresa. El uso de usuarios dentro del juego con motivo espiatorio y hacking será denunciado y resuelto por vías judiciales."/>
+	</bean>
+	<bean id="legalText4" class="domain.LegalText">
+		<property name="type" value="COOKIES"/>
+		<property name="codeLanguage" value="en"/>
+		<!-- <property name="body" value="This web uses cookies in order to improve its funcionallity"/> -->
+		<property name="body" value="&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;A Cookie is a file that is downloaded to your computer when you access certain web pages. &lt;/font&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Cookies allow a web page, among other things, to store and retrieve information about the browsing habits of a user or their equipment and, depending on the information it contains and how they use their equipment, they can be used to recognize to user.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Cookies are essential for the functioning of the internet, providing innumerable advantages in the provision of interactive services, facilitating navigation and usability of our website.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;The information that we provide below, will help you understand the different types of cookies:&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;table class=&quot;tablacookies&quot; border=&quot;0&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td colspan=&quot;3&quot;&gt; &lt;table border=&quot;1&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td colspan=&quot;3&quot;&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;TYPES OF COOKIES&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td rowspan=&quot;2&quot;&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACCORDING TO THE ENTITY THAT MANAGES THEM&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Own cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Are those that are collected by the editor to provide the service requested by the user.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Third party cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Are those that are collected and managed by a third party, these can not be considered own.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td rowspan=&quot;2&quot;&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACCORDING TO THE TIME LIMIT THAT THEY STAY ACTIVATED&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Session cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They collect data while the user browses the network in order to provide the requested service.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Persistent cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They are stored in the terminal and the information obtained will be used by the person responsible for the cookie in order to provide the requested service.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td rowspan=&quot;5&quot;&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;ACCORDING TO YOUR PURPOSE&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Technical cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They are the necessary ones for the correct navigation through the web.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Personalization cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They allow the user the characteristics (language) for browsing the website&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Analysis cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They allow the provider the analysis linked to the navigation carried out by the user, in order to track the use of the website, as well as to make statistics of the most visited contents, number of visitors, etc.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Advertising cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They allow the editor to include advertising space on the web, according to the content of the web itself.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Behavioral advertising cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;td&gt; &lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;They allow the editor to include advertising space on the web page according to the information obtained through the user&apos;s browsing habits.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;nbsp;&lt;/td&gt; &lt;td&gt;&amp;nbsp;&lt;/td&gt; &lt;td&gt;&amp;nbsp;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;According to the provisions of article 22.2 of Law 34/2002, of July 11, Services of the Information Society and Electronic Commerce (LSSI-CE), ACME CO., INC. Informs about the cookies used in our website:&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt; &lt;table class=&quot;tablacookies&quot; style=&quot;width: 588px;&quot; border=&quot;1&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;th style=&quot;width: 194px;&quot;&gt;&amp;nbsp;&lt;/th&gt; &lt;th style=&quot;width: 394px;&quot; colspan=&quot;3&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Types of Cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;width: 194px;&quot;&gt;&amp;nbsp;&lt;/td&gt; &lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Own Cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Session cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Persistent cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;width: 194px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Technical cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;width: 194px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Personalization cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;width: 194px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Analysis cookies&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 115px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 130px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;td style=&quot;width: 149px;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;input checked=&quot;checked&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;In addition, ACME CO., INC informs the user that he has the possibility to configure his browser so that he is informed of the reception of cookies, and may, if he wishes, prevent them from being installed on his hard drive.&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Below we provide the links of various browsers, through which you can make such configuration:&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Firefox from here:&amp;nbsp; &lt;/font&gt;&lt;/font&gt;&lt;a href=&quot;http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we&lt;/font&gt;&lt;/font&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Chrome from here:&amp;nbsp; &lt;/font&gt;&lt;/font&gt;&lt;a href=&quot;http://support.google.com/chrome/bin/answer.py?hl=es&amp;amp;answer=95647&quot; target=&quot;blank&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;http://support.google.com/chrome/bin/answer.py?hl=en&amp;amp;answer=95647&lt;/font&gt;&lt;/font&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Explorer from here:&amp;nbsp; &lt;/font&gt;&lt;/font&gt;&lt;a href=&quot;http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10&quot; target=&quot;blank&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10&lt;/font&gt;&lt;/font&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Safari from here:&amp;nbsp; &lt;/font&gt;&lt;/font&gt;&lt;a href=&quot;https://support.apple.com/kb/ph17191?locale=es_ES&quot; target=&quot;blank&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;https://support.apple.com/kb/ph17191?locale=en_US&lt;/font&gt;&lt;/font&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt; &lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Opera from here:&amp;nbsp; &lt;/font&gt;&lt;/font&gt;&lt;a href=&quot;http://help.opera.com/Windows/11.50/es-ES/cookies.html&quot; target=&quot;blank&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;http://help.opera.com/Windows/11.50/es-ES/cookies.html&lt;/font&gt;&lt;/font&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;"/>
+	</bean>
+	
+</beans>
